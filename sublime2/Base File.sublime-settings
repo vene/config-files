@@ -1,0 +1,13 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
+	"font_face": "Consolas",
+	"font_size": 10,
+	"rulers": [79],
+	
+	// Set to true to removing trailing white space on save
+	"trim_trailing_white_space_on_save": false,
+
+	// Set to true to ensure the last line of the file ends in a newline
+	// character when saving
+	"ensure_newline_at_eof_on_save": true
+}
