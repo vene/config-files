@@ -1,7 +1,6 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
-	"font_face": "Consolas",
-	"font_size": 10,
+	"font_size": 12,
 	"rulers": [79],
 	
 	// Set to true to removing trailing white space on save
