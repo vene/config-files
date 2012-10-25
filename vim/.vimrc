@@ -1,6 +1,15 @@
  set nocompatible               " be iMproved
  filetype off                   " required!
+ filetype plugin indent on
+ set ts=4
  set laststatus=2
+ set expandtab
+ set autoindent
+ set smartindent
+
+ " set textwidth=80
+ set colorcolumn=+1
+
  set encoding=utf8
  set ruler
  syntax on
@@ -26,8 +35,12 @@
  " original repos on github
  Bundle 'Lokaltog/vim-powerline'
  Bundle 'altercation/vim-colors-solarized'
- Bundle 'ivanov/vim-ipython'
+ " Bundle 'ivanov/vim-ipython'
  Bundle 'klen/python-mode'
+ Bundle 'tpope/vim-surround'
+ Bundle 'scrooloose/nerdtree'
+ Bundle 'scrooloose/nerdcommenter'
+
  " Bundle 'tpope/vim-fugitive'
  " Bundle 'Lokaltog/vim-easymotion'
  " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -51,3 +64,14 @@
  " NOTE: comments after Bundle command are not allowed..
 
  let g:Powerline_symbols = 'fancy'
+
+ " quit if only quickfix window left
+ "let s:cpo_save = &cpo
+ " set cpo&vim
+ " augroup plugin-now-quit-if-only-quickfix-buffer-left
+ "    autocmd!
+ "        autocmd WinEnter * if winnr('$') == 1 && &buftype == 'quickfix' |
+ "        quit | endif
+ "        augroup end
+ "        let &cpo = s:cpo_save
+ "        unlet s:cpo_save
