@@ -7,7 +7,7 @@
  set background=dark
  colorscheme solarized
  set backspace=2
-
+ set relativenumber
  " Octave syntax 
  augroup filetypedetect 
    au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
