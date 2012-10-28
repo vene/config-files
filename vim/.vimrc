@@ -6,7 +6,9 @@
  set expandtab
  set autoindent
  set smartindent
-
+ set shiftwidth=4
+ set softtabstop=4
+ 
  " set textwidth=80
  set colorcolumn=+1
 
@@ -17,6 +19,7 @@
  colorscheme solarized
  set backspace=2
  set relativenumber
+ let g:Powerline_symbols = 'fancy'
  " Octave syntax 
  augroup filetypedetect 
    au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
@@ -35,12 +38,11 @@
  " original repos on github
  Bundle 'Lokaltog/vim-powerline'
  Bundle 'altercation/vim-colors-solarized'
- " Bundle 'ivanov/vim-ipython'
  Bundle 'klen/python-mode'
  Bundle 'tpope/vim-surround'
  Bundle 'scrooloose/nerdtree'
  Bundle 'scrooloose/nerdcommenter'
-
+ Bundle 'ervandew/supertab'
  " Bundle 'tpope/vim-fugitive'
  " Bundle 'Lokaltog/vim-easymotion'
  " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -52,7 +54,6 @@
  " Bundle 'git://git.wincent.com/command-t.git'
  " ...
 
- filetype plugin indent on     " required!
  "
  " Brief help
  " :BundleList          - list configured bundles
@@ -63,15 +64,3 @@
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
 
- let g:Powerline_symbols = 'fancy'
-
- " quit if only quickfix window left
- "let s:cpo_save = &cpo
- " set cpo&vim
- " augroup plugin-now-quit-if-only-quickfix-buffer-left
- "    autocmd!
- "        autocmd WinEnter * if winnr('$') == 1 && &buftype == 'quickfix' |
- "        quit | endif
- "        augroup end
- "        let &cpo = s:cpo_save
- "        unlet s:cpo_save
