@@ -43,6 +43,8 @@
  Bundle 'scrooloose/nerdtree'
  Bundle 'scrooloose/nerdcommenter'
  Bundle 'ervandew/supertab'
+ Bundle 'Townk/vim-autoclose'
+ Bundle 'vim-scripts/TeX-PDF'
  " Bundle 'tpope/vim-fugitive'
  " Bundle 'Lokaltog/vim-easymotion'
  " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
