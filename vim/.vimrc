@@ -16,7 +16,7 @@
  set ruler
  syntax on
  set background=dark
- colorscheme solarized
+ colorscheme zenburn 
  set backspace=2
  set relativenumber
  let g:Powerline_symbols = 'fancy'
