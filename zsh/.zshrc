@@ -5,6 +5,7 @@ export ZSH_THEME="vene"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+export DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 export CC=clang
