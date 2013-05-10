@@ -7,6 +7,7 @@ plugins=(git)
 
 export DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
+setopt no_nomatch # if there are no matches for globs, leave them alone and execute the command
 unsetopt correct_all
 export CC=clang
 export CXX=clang++
