@@ -15,6 +15,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr
 export PATH=/usr/local/git/libexec/git-core:$PATH
 # Python
 export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PYTHONIOENCODING=UTF-8
 # MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Cool aliases
@@ -36,3 +37,5 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export WORKON_HOME=~/envs
 source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 workon stable
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
