@@ -9,13 +9,16 @@ export DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 setopt no_nomatch # if there are no matches for globs, leave them alone and execute the command
 unsetopt correct_all
+
+export EDITOR=vim
 export CC=clang
 export CXX=clang++
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/texbin:~/.local/bin
 # Git
 export PATH=/usr/local/git/libexec/git-core:$PATH
 # Python
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+#export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PYTHONIOENCODING=UTF-8
 # MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -33,10 +36,10 @@ export AUTOJUMP_IGNORE_CASE=1
 
 # Jump to my default virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-#source /Users/vene/code/stable-scipy/bin/activate
 
 export WORKON_HOME=~/envs
-source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
-workon stable
+source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+workon git 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/Users/vene/Library/Haskell/bin # add cabal path
