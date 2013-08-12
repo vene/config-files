@@ -9,7 +9,7 @@
  set shiftwidth=4
  set softtabstop=4
  
- " set textwidth=80
+ set textwidth=79
  set colorcolumn=+1
 
  set encoding=utf8
@@ -24,8 +24,8 @@
  augroup filetypedetect 
    au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
  augroup END 
- 
- 
+ autocmd BufWritePost *.py call Flake8() 
+
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
 
@@ -38,7 +38,9 @@
  " original repos on github
  Bundle 'Lokaltog/vim-powerline'
  Bundle 'altercation/vim-colors-solarized'
- Bundle 'klen/python-mode'
+ " Bundle 'klen/python-mode'
+ Bundle 'hynek/vim-python-pep8-indent'
+ Bundle 'nvie/vim-flake8'
  Bundle 'tpope/vim-surround'
  Bundle 'scrooloose/nerdtree'
  Bundle 'scrooloose/nerdcommenter'
