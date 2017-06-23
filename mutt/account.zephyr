@@ -1,0 +1,13 @@
+set realname = "Vlad Niculae"
+set from = "zXX@gmail.com"
+set use_from = yes
+set imap_user = "zXX@gmail.com"
+set imap_pass = "XXXXX"
+set smtp_url = "smtp://zXX@smtp.gmail.com:587"
+set smtp_pass = "XXXXX"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/DRAFTS"
+set header_cache = ~/.mutt/zephyr/cache/headers
+set message_cachedir = ~/.mutt/zephyr/cache/bodies
+set certificate_file = ~/.mutt/zephyr/certificates

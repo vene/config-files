@@ -1,0 +1,13 @@
+set realname = "Vlad Niculae"
+set from = "vXX@cs.cornell.edu"
+set use_from = yes
+set imap_user = "vXX@cornell.edu"
+set imap_pass = "XXXXX"
+set smtp_url = "smtp://vXX@mail.cs.cornell.edu:587"
+set smtp_pass = "XXXXX"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/DRAFTS"
+set header_cache = ~/.mutt/cornell/cache/headers
+set message_cachedir = ~/.mutt/cornell/cache/bodies
+set certificate_file = ~/.mutt/cornell/certificates

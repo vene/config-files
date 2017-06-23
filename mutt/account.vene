@@ -1,0 +1,13 @@
+set realname = "Vlad Niculae"
+set from = "vXX@vene.ro"
+set use_from = yes
+set imap_user = "vXX@vene.ro"
+set imap_pass = "XXXXX"
+set smtp_url = "smtp://vXX@vene.ro@smtp.gmail.com:587"
+set smtp_pass = "XXXX"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/DRAFTS"
+set header_cache = ~/.mutt/vene/cache/headers
+set message_cachedir = ~/.mutt/vene/cache/bodies
+set certificate_file = ~/.mutt/vene/certificates

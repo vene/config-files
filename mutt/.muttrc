@@ -1,0 +1,19 @@
+folder-hook 'account.cornell' 'source ~/.mutt/account.cornell'
+folder-hook 'account.zephyr' 'source ~/.mutt/account.zephyr'
+folder-hook 'account.vene' 'source ~/.mutt/account.vene'
+
+source ~/.mutt/account.cornell
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.cornell<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.zephyr<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/account.vene<enter><change-folder>!<enter>'
+
+bind index G imap-fetch-mail
+set editor = "vim -c 'set tw=70 et' '+/^$' "
+set edit_headers
+set markers
+set smart_wrap
+set pager_context = 5
+push <show-version>
+
+set sort = threads
+set sort_aux = last-date-received
