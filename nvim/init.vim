@@ -9,7 +9,11 @@ set t_Co=256
 if(has("termguicolors"))
  set termguicolors
 endif
-"set t_ut=
+set termguicolors
+" set background=dark
+set t_ut=
+" colorscheme gruvbox
+colorscheme OceanicNext
 
 " Encoding
 set encoding=utf-8 " screen
@@ -94,7 +98,6 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Color scheme
 "colorscheme jellybeans
-colorscheme OceanicNext
 
 " Spacing
 set ts=4 sts=4 sw=4 expandtab "noexpandtab
@@ -107,6 +110,7 @@ filetype plugin indent on
 
 autocmd BufNewFile,BufRead *.txt setfiletype text
 autocmd FileType cpp setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType cc setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
@@ -183,9 +187,22 @@ let g:vimtex_latexmk_enabled = 1
 let g:vimtex_latexmk_continuous = 1
 let g:vimtex_latexmk_callback = 0
 let g:vimtex_latexmk_progname = 'nvr'
-let g:vimtex_view_general_viewer = 'qpdfview'
-let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
-let g:vimtex_view_general_options_latexmk = '--unique'
+" on linux
+" let g:vimtex_view_general_viewer = 'qpdfview'
+" let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+" on windows
+let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
+" let g:vimtex_view_general_options
+    " \ = ' -forward-search @tex @line @pdf'
+    " \ . ' -inverse-search "gvim --servername ' . v:servername
+    " \ . ' --remote-send \"^<C-\^>^<C-n^>'
+    " \ . ':drop \%f^<CR^>:\%l^<CR^>:normal\! zzzv^<CR^>'
+    " \ . ':execute ''drop '' . fnameescape(''\%f'')^<CR^>'
+    " \ . ':\%l^<CR^>:normal\! zzzv^<CR^>'
+    " \ . ':call remote_foreground('''.v:servername.''')^<CR^>^<CR^>\""'
+let g:vimtex_view_general_options 
+	\ = '-reuse-instance `basename @pdf`'
+let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 
 " Folding
 let g:vimtex_fold_enabled = 1
