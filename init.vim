@@ -16,6 +16,8 @@ filetype indent on
 filetype on
 syntax on
 
+let g:python3_host_prog = '/home/vlad/conda/envs/main/bin/python'
+
 " if empty(v:servername) && exists('*remote_startserver')
 "     call remote_startserver('VIM')
 " endif
@@ -82,9 +84,9 @@ set mouse=a
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
-set relativenumber
+"set relativenumber
 set ruler
-set cursorline
+"set cursorline
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en' 
@@ -93,7 +95,7 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
 " Turn on the Wild menu
-set wildmenu
+" set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -102,9 +104,6 @@ if has("win16") || has("win32")
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
-
-"Always show current position
-set ruler
 
 " Height of the command bar
 set cmdheight=1
@@ -137,7 +136,7 @@ set lazyredraw
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+" set showmatch 
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -372,37 +371,48 @@ nnoremap <silent> <Leader>long
     \   let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
     \ endif<CR>
 
-" Plugin configurations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin configurations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+let g:ycm_python_interpreter_path = '/home/vlad/conda/envs/main/bin/python'
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
+"
+let g:ycm_auto_trigger = 0
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ }
 
 
 " vimtex options
-
+"
 " Compilation with latexmk
+let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_compiler_latexmk = {
-    \ 'executable' : 'latexmk.exe',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
     \ 'build_dir' : 'livepreview',
-    \ 'callback' : 0,
     \ 'options' : [
     \   '-pdf',
     \   '-verbose',
-    \   '-file-line-error',
-    \   '-lualatex',
     \   '-silent',
+    \   '-file-line-error',
     \   '-synctex=1',
     \   '-interaction=nonstopmode',
     \ ],
     \}
-let g:vimtex_fold_enabled = 1
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = '/home/vlad/conda/envs/main/bin/nvr'
+ 
+" let g:vimtex_view_general_viewer = 'qpdfview'
+" let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+" let g:vimtex_view_general_options_latexmk = '--unique'
+
+let g:vimtex_fold_enabled = 0
 let g:vimtex_fold_envs = 0  " Don't fold equations, theorems, etc.
-let g:vimtex_view_method = 'general'
-" let g:vimtex_view_general_viewer = 'C:\\Program\ Files\ \(x86\)\\SumatraPDF\\SumatraPDF.exe'
-let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
-let g:vimtex_view_general_options 
-   \ = '-reuse-instance -forward-search `basename @tex` @line livepreview\\`basename @pdf`'
-" let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 
 " wsltty-specific config
 " context-specific cursor
