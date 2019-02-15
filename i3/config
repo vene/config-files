@@ -167,6 +167,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 # # panel
 bar {
+    font pango:Fantasque Mono 9, FontAwesome 9
 	colors {
         background #2f343f
         statusline #2f343f
