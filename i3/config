@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Fantasque Sans Mono 11 
+font pango:Fantasque Sans Mono 9 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -165,10 +165,31 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+# # panel
 bar {
+	colors {
+        background #2f343f
+        statusline #2f343f
+        separator #4b5262
+
+		# colour of border, background, and text
+        focused_workspace	#2f343f	#bf616a	#d8dee8
+        active_workspace	#2f343f	#2f343f	#d8dee8
+        inactive_workspace	#2f343f	#2f343f	#d8dee8
+        urgent_workspace	#2f343f	#ebcb8b	#2f343f
+    }
         status_command i3status
 }
 
+for_window [class=".*"] border normal 1
 for_window[class="matplotlib" instance="matplotlib"] floating enable
 
 bindsym --release Print exec "/home/vlad/.local/bin/shot"
+
+# client.focused			#bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused	#2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.focused_inactive	#2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.unfocused		#2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.urgent			#2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.placeholder		#2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.background #2f343f
