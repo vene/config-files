@@ -6,6 +6,9 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'itchyny/lightline.vim'
 " Plug 'yggdroot/indentline'  " cannot use it because it sets conceal
 Plug 'lervag/vimtex'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set history=500
@@ -18,9 +21,9 @@ syntax on
 
 let g:python3_host_prog = '/home/vlad/conda/envs/main/bin/python'
 
-" if empty(v:servername) && exists('*remote_startserver')
-"     call remote_startserver('VIM')
-" endif
+if empty(v:servername) && exists('*remote_startserver')
+    call remote_startserver('VIM')
+endif
 
 " for vim 7
 set t_Co=256
@@ -48,6 +51,7 @@ set ffs=unix,dos,mac
 
 set ts=4 sts=4 sw=4 expandtab smarttab
 autocmd BufNewFile,BufRead *.txt setfiletype text
+autocmd FileType tex setlocal noautoindent nosmartindent nocindent indentexpr=
 autocmd FileType cpp setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType cc setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
@@ -260,7 +264,7 @@ fun! CleanExtraSpaces()
 endfun
 
 if has("autocmd")
-    autocmd BufWritePre *.py,*.pyx,*.pxd,*.rb,*.c,*.cc,*.cpp,*.h,*.rst,*.txt,*.js,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    autocmd BufWritePre *.tex,*.py,*.pyx,*.pxd,*.rb,*.c,*.cc,*.cpp,*.h,*.rst,*.txt,*.js,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -401,6 +405,7 @@ let g:vimtex_compiler_latexmk = {
     \   '-silent',
     \   '-file-line-error',
     \   '-synctex=1',
+    \   '-shell-escape',
     \   '-interaction=nonstopmode',
     \ ],
     \}
