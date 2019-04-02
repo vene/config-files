@@ -5,11 +5,14 @@ Plug 'mhartington/oceanic-next'
 Plug 'Valloric/YouCompleteMe'
 Plug 'itchyny/lightline.vim'
 " Plug 'yggdroot/indentline'  " cannot use it because it sets conceal
+Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
+
+let g:polyglot_disabled = ['latex']
 
 set history=500
 
@@ -93,7 +96,7 @@ set ruler
 "set cursorline
 
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
+let $LANG='en_US.utf8'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
