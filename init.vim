@@ -10,9 +10,17 @@ Plug 'lervag/vimtex'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdcommenter'
+Plug 'sirver/ultisnips'
 call plug#end()
 
 let g:polyglot_disabled = ['latex']
+
+
+" snips
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/ultisnips']
+let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 set history=500
 
@@ -96,7 +104,7 @@ set ruler
 "set cursorline
 
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en_US.utf8'
+let $LANG='en_US.utf8' 
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -386,7 +394,7 @@ let g:ycm_python_interpreter_path = '/home/vlad/conda/envs/main/bin/python'
 let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_interpreter_path',
   \]
-let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
 "
 let g:ycm_auto_trigger = 0
 let g:lightline = {
